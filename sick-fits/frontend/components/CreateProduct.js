@@ -44,6 +44,7 @@ export default function CreateProduct() {
     // We can pase variables here... or in the moment when we use it asynchronously (form)
     {
       variables: inputs,
+      // this is to refresh the products after mutation
       refetchQueries: [{ query: ALL_PRODUCTS_QUERY }],
     }
   );

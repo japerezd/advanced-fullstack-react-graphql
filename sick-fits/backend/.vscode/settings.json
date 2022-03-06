@@ -10,5 +10,25 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "prettier.disableLanguages": ["javascript", "javascriptreact"]
+  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#ff5f93",
+    "activityBar.activeBorder": "#53ff00",
+    "activityBar.background": "#ff5f93",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#53ff00",
+    "activityBarBadge.foreground": "#15202b",
+    "sash.hoverBorder": "#ff5f93",
+    "statusBar.background": "#ff2c70",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#ff5f93",
+    "statusBarItem.remoteBackground": "#ff2c70",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#ff2c70",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#ff2c7099",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#FF2C70"
 }
