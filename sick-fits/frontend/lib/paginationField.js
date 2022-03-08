@@ -13,12 +13,20 @@ export default function paginationField() {
 
       // Check if we have existing items
       const items = existing.slice(skip, skip + first).filter((x) => x);
+      // If
+        // There are items
+        // AND there aren't enough items to satisfy how many were requested
+        // AND we are on the last page
+      // THEN JUST SEND IT
+      if (items.length && items.length !== first && page === pages) {
+        return items;
+      }
       if (items.length !== first) {
         // We dont have any items, we must go to the network to fetch them
         return false;
       }
 
-      // If there are items, just return them from the cache, and we dont need to to the network
+      // If there are items, just return them from the cache, and we dont need to go to the network
       if (items.length) {
         return items;
       }
@@ -29,8 +37,16 @@ export default function paginationField() {
       // The other thing we can do is to return false from here, (network request)
     },
 
-    merge() {
+    merge(existing, incoming, { args }) {
+      const { skip, first } = args;
       // This runs when the Apollo Client comes back from the network with our products
+      console.log(`Merging items from the network ${incoming.length}`);
+      const merged = existing ? existing.slice(0) : [];
+      for (let i = skip; i < skip + incoming.length; i++) {
+        merged[i] = incoming[i - skip];
+      }
+      // finally we return the merged items from the cache,
+      return merged;
     },
   };
 }
