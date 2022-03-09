@@ -11,7 +11,7 @@ export default function useForm(initial = {}) {
   }, [initialValues]);
 
   // {
-  //   name: 'bet',
+  //   name: 'beto',
   //   description: 'this is a ...',
   //   price: 1000
   // }
