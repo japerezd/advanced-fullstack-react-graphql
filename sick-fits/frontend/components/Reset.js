@@ -37,8 +37,6 @@ export default function Reset({ token }) {
     ? data?.redeemUserPasswordResetToken
     : undefined;
 
-  console.log({ successfulError, error });
-
   async function handleSubmit(e) {
     e.preventDefault();
     await reset().catch(console.error);
